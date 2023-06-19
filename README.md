@@ -30,6 +30,7 @@ sudo apt install texlive-full
 
 ```powershell
 choco install texlive
+tlmgr install a4 cite collection-langjapanese latexmk url utf8add
 ```
 
 # Docker
