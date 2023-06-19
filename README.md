@@ -29,7 +29,23 @@ sudo apt install texlive-full
 # Windows
 
 ```powershell
-choco install texli
+choco install texlive
+```
+
+# Docker
+
+```bash
+# pull
+# Docker Hub
+docker pull paperist/texlive-ja:latest
+
+# GitHub Container Registry
+docker pull ghcr.io/paperist/texlive-ja:latest
+docker image tag ghcr.io/paperist/texlive-ja:latest paperist/texlive-ja:latest
+
+
+# run
+docker run --rm -it -v $PWD:/workdir paperist/texlive-ja:latest sh -c 'latexmk -C main.tex && latexmk main.tex && latexmk -c main.tex'
 ```
 
 ---
