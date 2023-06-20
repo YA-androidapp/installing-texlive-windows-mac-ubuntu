@@ -10,7 +10,24 @@
 
 ```zsh
 brew install --cask mactex
+exec $SHELL -l
+
 sudo tlmgr update --self --all
+sudo tlmgr paper a4
+
+# CUI
+brew install --cask mactex-no-gui
+exec $SHELL -l
+
+sudo tlmgr update --self --all
+sudo tlmgr paper a4
+
+# TeX Liveをフルインストールしない
+brew install --cask basictex
+exec $SHELL -l
+
+sudo tlmgr update --self --all
+sudo tlmgr install collection-langjapanese latexmk utf8add
 sudo tlmgr paper a4
 ```
 
@@ -32,6 +49,7 @@ sudo apt install texlive-full
 # 管理者権限で実行
 choco install texlive
 tlmgr install a4 cite collection-langjapanese latexmk url utf8add
+tlmgr paper a4
 ```
 
 # Docker
