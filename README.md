@@ -29,6 +29,7 @@ sudo apt install texlive-full
 # Windows
 
 ```powershell
+# 管理者権限で実行
 choco install texlive
 tlmgr install a4 cite collection-langjapanese latexmk url utf8add
 ```
