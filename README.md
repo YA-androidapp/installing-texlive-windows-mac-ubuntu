@@ -78,7 +78,7 @@ lualatex test.tex
 ```
 
 ```bash
-tlmgr install booktabs caption comment dotseqn float framed geometry here lastpage lipsum mathrsfs multirow newtx ntheorem realscripts setspace siunitx subfigure textpos times titlesec txfonts type1cm xstring
+tlmgr install booktabs caption comment dotseqn filehook float framed geometry here lastpage lipsum mathrsfs multirow newtx ntheorem realscripts setspace siunitx subfigure textpos times titlesec txfonts type1cm xstring
 
 tlmgr info mathrsfs
 # Packages containing files matching `mathrsfs':
@@ -110,6 +110,7 @@ dvipdfmx jsample
 
 cd Templates/latex-template-ja
 lualatex thesis.tex
+lualatex wordstyle.tex
 ```
 
 ---
