@@ -1,0 +1,77 @@
+\documentclass[12pt]{ltjsarticle}
+
+%%%%%%%% ページのレイアウト
+\usepackage[%
+noheadfoot,
+vmargin=25truemm,
+hmargin=27.5truemm
+]{geometry}
+\pagestyle{empty}
+
+%%%%%%%% 節の見出しの設定
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+\titleformat*{\section}{\large\sffamily\bfseries}
+\titlespacing{\section}{0pt}{*2}{*0}
+\titleformat*{\subsection}{\normalsize\sffamily\bfseries}
+\titlespacing{\subsection}{0pt}{*2}{*0}
+
+%%%%%%%% タイトル関連マクロ
+
+%%%% タイトル
+\newcommand{\Title}[2][]{
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\begin{minipage}{135truemm}
+\centering
+\Large #2#1
+\end{minipage}
+}
+
+%%%% 謝辞
+\newcommand{\Thanks}[1]{
+\footnotetext{#1}
+
+\vspace*{0.5\baselineskip}
+\renewcommand{\thefootnote}{*\arabic{footnote}}
+\setcounter{footnote}{0}
+}
+
+%%%% 著者情報
+\newcommand{\Author}[5][E-mail: ]{%
+#2 (#3)\footnote{#4. #1\texttt{#5}}\par
+}
+
+%%%% 出力
+\newenvironment{header}%
+{\begin{center}}%
+{\medskip
+\end{center}
+\renewcommand{\thefootnote}{\arabic{footnote})}
+\setcounter{footnote}{0}}
+
+
+
+%%%%%%%% その他パッケージ
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+
+
+\begin{document}
+
+
+%%%%%%%% タイトルなど
+
+\begin{header}
+%\Title[\footnotemark]{ここにタイトル}    % タイトルの右上にアスタリスクを付ける場合はこっち
+\Title{ここにタイトル}
+\Thanks{本研究は, ○○の助成を受けた.}
+\Author{著者1}{所属1}{〒123-4567 東京都△△区～}{mail@univ.ac.jp}
+\Author[]{著者2}{所属2}{メールアドレス非公開の場合}{}
+\end{header}
+
+
+%%%%%%%% 本文
+
+以下, 本文を書く.
+
+\end{document}

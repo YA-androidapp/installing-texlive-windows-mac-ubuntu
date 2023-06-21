@@ -27,7 +27,7 @@ brew install --cask basictex
 exec $SHELL -l
 
 sudo tlmgr update --self --all
-sudo tlmgr install collection-langjapanese latexmk utf8add
+sudo tlmgr install collection-langjapanese latexindent latexmk utf8add
 sudo tlmgr paper a4
 ```
 
@@ -51,7 +51,7 @@ choco install texlive
 
 tlmgr --repository http://www.texlive.info/tlgpg/ install tlgpg
 
-tlmgr install cite collection-langjapanese latexmk url utf8add
+tlmgr install cite collection-langjapanese latexindent latexmk url utf8add
 tlmgr paper a4
 ```
 
@@ -78,15 +78,32 @@ lualatex test.tex
 ```
 
 ```bash
-tlmgr install booktabs comment float here lastpage multirow setspace textpos times txfonts
+tlmgr install booktabs caption comment float framed geometry here lastpage lipsum multirow ntheorem setspace siunitx textpos times titlesec txfonts
 
 cd Templates/meltingrabbit.com/201708020
 lualatex source.tex
+
+cd Templates/meltingrabbit.com/2018022501
+lualatex source.tex
+
+cd Templates/rkmathi
+lualatex jornal.tex
+lualatex report.tex
+
+cd Templates/t_kemmochi
+lualatex jsiam.tex
+lualatex mathsoc.tex
+
+cd Templates/ipsj_v4/UTF
+platex jsample
+dvipdfmx jsample
 ```
 
 ---
 
 # 参考文献
+
+## TeX
 
 - [TeX Users Group](https://www.tug.org/texlive/doc/texlive-ja/texlive-ja.pdf)
   - [TeX Live](https://www.tug.org/texlive/doc/texlive-ja/texlive-ja.pdf)
@@ -96,7 +113,19 @@ lualatex source.tex
 
 - [TeX Wiki](https://texwiki.texjp.org/)
 
+## テンプレート
+
+- [LaTeXスタイルファイル、MS-Wordテンプレートファイル](https://www.ipsj.or.jp/journal/submit/style.html)
+
 - [Melting Rabbit's Blog ](https://meltingrabbit.com/)
+
+- [rkmathi/jornal.tex](https://gist.github.com/rkmathi/6941a5180b7554ab915d)
+
+- [(lt)jsarticleによる, 日本数学会・日本応用数理学会の学会アブストラクト](https://qiita.com/t_kemmochi/items/cad392a0a3e7bcf3018d)
+
+## フォント
+
+- [yhchen/ttc2ttf](https://github.com/yhchen/ttc2ttf)
 
 ---
 

@@ -1,0 +1,60 @@
+\documentclass[11pt]{ltjsarticle}
+
+%%%%%%%% ページのレイアウト
+\usepackage[%
+noheadfoot,
+hmargin=25truemm,
+top=20truemm,
+bottom=30truemm
+]{geometry}
+\pagestyle{empty}
+
+%%%%%%%% 節の見出しの設定
+\usepackage{titlesec}
+\titleformat*{\section}{\large\selectfont\sffamily\bfseries}
+\titlespacing{\section}{0pt}{*2}{*1}
+\titleformat*{\subsection}{\normalsize\sffamily\bfseries}
+\titlespacing{\subsection}{0pt}{*1}{*0}
+
+%%%%%%%% 行送りの設定
+\renewcommand{\baselinestretch}{0.85}
+\usepackage{setspace}
+
+%%%%%%%% 図などのキャプションの設定
+\usepackage[labelsep=period, font=footnotesize, aboveskip=0pt]{caption}
+
+%%%%%%%% タイトル関連マクロ
+\newcommand{\Title}[1]{%
+\begin{spacing}{1.2}
+\textbf{\Large #1}
+\end{spacing}
+\medskip}
+\newcommand{\Authors}[1]{\hspace*{2\zw}#1\par}
+\newcommand{\Affiliations}[1]{\hspace*{2\zw}#1\par}
+\newcommand{\Emails}[1]{\hspace*{2\zw}e-mail: #1\par}
+\newcommand{\header}[1]{\twocolumn[#1
+\bigskip\medskip]}
+
+
+\begin{document}
+
+
+%%%%%%%% タイトルなど
+\header{
+\Title{タイトル}
+\Authors{著者1姓 著者1名$^{1}$, 著者2姓 著者2名$^{2}$, 著者3姓 著者3名$^{1,2}$}
+\Affiliations{$^{1}$所属1，$^{2}$所属2}
+\Emails{authors1@e-mailaddress}
+}
+
+
+%%%%%%%% 本文
+
+以下, 本文を書く.
+
+
+%%%%%%%% 参考文献
+\bibliographystyle{unsrt}
+\bibliography{bibfile}
+
+\end{document}

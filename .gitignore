@@ -1,3 +1,6 @@
 
 *.aux
 *.log
+*.ttf
+*.ttc
+ttc2ttf/

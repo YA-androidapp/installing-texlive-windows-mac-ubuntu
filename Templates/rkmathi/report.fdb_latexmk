@@ -1,0 +1,24 @@
+# Fdb version 4
+["pdflatex"] 1687340662 "c:/Users/Y/Documents/GitHub/installing-texlive-windows-mac-ubuntu/Templates/rkmathi/report.tex" "report.pdf" "report" 1687340663 2
+  "c:/Users/Y/Documents/GitHub/installing-texlive-windows-mac-ubuntu/Templates/rkmathi/report.tex" 1687340661 3195 bbb0bca40e335be7c8b2dbd6591aa098 ""
+  "c:/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty" 1687209534 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
+  "c:/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty" 1687209534 8356 7bbb2c2373aa810be568c29e333da8ed ""
+  "c:/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty" 1687209557 17859 4409f8f50cd365c68e684407e5350b1b ""
+  "c:/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty" 1687209573 20089 80423eac55aa175305d35b49e04fe23b ""
+  "c:/texlive/2023/texmf-dist/tex/latex/base/ltluatex.tex" 1687209543 8802 5eedb464e056151f04c7d95c34e06177 ""
+  "c:/texlive/2023/texmf-dist/tex/luatex/ctablestack/ctablestack.sty" 1687212505 1510 9c109bd1f6a9fc69b2f6096ee416d958 ""
+  "c:/texlive/2023/texmf-dist/tex/luatex/luaotfload/luaotfload.sty" 1687209561 1812 111305261f7ae81803f3a1002d6b29c4 ""
+  "c:/texlive/2023/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1687212547 10170 b1a2248f43cab899e3fe36f676176865 ""
+  "c:/texlive/2023/texmf-dist/tex/luatex/luatexja/ltjsarticle.cls" 1687212548 54048 93eefc8b4e019ecace6b76a007000556 ""
+  "c:/texlive/2023/texmf-dist/tex/luatex/luatexja/luatexja-core.sty" 1687212548 29748 836f07fc4aa5d417781fc7aec8ed13f4 ""
+  "c:/texlive/2023/texmf-dist/tex/luatex/luatexja/luatexja.sty" 1687212548 2042 1babaf6b163a8e5280abd8cba34d0ea4 ""
+  "c:/texlive/2023/texmf-dist/web2c/texmf.cnf" 1687209495 40967 d940221f8762fd5848760382d97d1226 ""
+  "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1687317710 6494337 1f9d79ea4464a19cb36c7f0d334dd728 ""
+  "c:/texlive/2023/texmf.cnf" 1687209593 801 1c642d441d025ac3a1e223d8d9feb6db ""
+  "report.aux" 1687340662 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "report.tex" 1687340661 3195 bbb0bca40e335be7c8b2dbd6591aa098 ""
+  (generated)
+  "report.aux"
+  "report.log"
+  "report.pdf"
+  (rewritten before read)
