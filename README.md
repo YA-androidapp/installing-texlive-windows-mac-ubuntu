@@ -95,6 +95,7 @@ lualatex jsiam.tex
 lualatex mathsoc.tex
 
 cd Templates/ipsj_v4/UTF
+# ptex2pdf -l jsample
 platex jsample
 dvipdfmx jsample
 ```
