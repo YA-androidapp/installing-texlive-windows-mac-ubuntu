@@ -1,0 +1,94 @@
+\setcounter{tocdepth}{2}%subsection(項)まで目次に出力
+\setcounter{secnumdepth}{4}%小節番号の付番レベル
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}%[(a),(b),…]に変更
+\renewcommand{\figurename}{Fig.~}%図->Fig.
+\renewcommand{\tablename}{Table~}%表->Table
+\renewcommand{\appendixname}{補足}%付録->補足
+
+%積分記号
+\DeclareSymbolFont{cmLargeSymbols}{OMX}{cmex}{m}{n}
+    \DeclareMathSymbol{\cmIntOp}{\mathop}{cmLargeSymbols}{"52}
+    \let\intop\cmIntOp
+\DeclareSymbolFont{cmLargeSymbols}{OMX}{cmex}{m}{n}
+    \DeclareMathSymbol{\cmOintOp}{\mathop}{cmLargeSymbols}{"49}
+    \let\ointop\cmOintOp
+
+%%%%%%%%%%
+\setlength{\textwidth}{\fullwidth}
+\setlength{\evensidemargin}{\oddsidemargin}
+\addtolength\headsep{\baselineskip}
+%%%
+\setlength{\textwidth}{160truemm}
+\setlength{\fullwidth}{\textwidth}
+\setlength{\oddsidemargin}{30truemm}
+\addtolength{\oddsidemargin}{-1truein}
+\setlength{\evensidemargin}{20truemm}
+\addtolength{\evensidemargin}{-1truein}
+%\setlength\fullwidth{0.76\paperwidth}
+%\setlength\textwidth{\fullwidth}
+%\addtolength{\textheight}{\baselineskip}
+%\setlength{\oddsidemargin}{.65\oddsidemargin}
+%%%%%
+%\setlength{\evensidemargin}{\paperwidth}
+%\addtolength{\evensidemargin}{-\fullwidth}
+%\setlength{\evensidemargin}{.35\evensidemargin}
+%\iftombow
+%  \addtolength{\evensidemargin}{-1in}
+%\else
+%  \addtolength{\evensidemargin}{-1truein}
+%\fi
+%%%%%
+\addtolength\topmargin{-0.5\baselineskip}
+%%%%%
+\makeatletter
+\def\ps@plainhead{%
+  \let\@mkboth\@gobbletwo
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@empty
+  \def\@evenhead{%
+    \if@mparswitch \hss \fi
+    \hbox to \fullwidth{{\thepage}\hfil}
+    \if@mparswitch\else \hss \fi}%
+  \def\@oddhead{%
+    \hbox to \fullwidth{\hfil{\thepage}}\hss}}
+\makeatother
+%%%%%
+\makeatletter
+\def\ps@headings{%
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@empty
+  \def\@evenhead{%
+    \if@mparswitch \hss \fi
+    \hbox to \fullwidth{\autoxspacing
+        \textit
+{\thepage}\hfil\leftmark}%
+    \if@mparswitch\else \hss \fi}%
+  \def\@oddhead{%
+        \hbox to \fullwidth{\autoxspacing
+        {\if@twoside\rightmark\else\leftmark\fi}\hfil\textit
+{\thepage}}
+        \hss}%
+  \let\@mkboth\markboth
+  \def\chaptermark##1{\markboth{%
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \@chapapp\thechapter\@chappos\hskip1zw
+      \fi
+    \fi
+    ##1}{}}%
+  \def\sectionmark##1{\markright{%
+    \ifnum \c@secnumdepth >\z@ \thesection \hskip1zw\fi
+    ##1}}}
+\makeatother
+%%%%%
+\makeatletter
+\DeclareRobustCommand\cite{\unskip
+  \@ifnextchar [{\@tempswatrue\@citex}{\@tempswafalse\@citex[]}}
+\def\@cite#1#2{$^{\hbox{\scriptsize({#1\if@tempswa , #2\fi})}}$}
+\def\@biblabel#1{(#1)}
+\makeatother
+%%%%%
+\makeatletter
+\def\@biblabel#1{(#1)}
+\makeatother
+%%%%%

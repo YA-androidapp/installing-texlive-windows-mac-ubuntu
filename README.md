@@ -78,7 +78,16 @@ lualatex test.tex
 ```
 
 ```bash
-tlmgr install booktabs caption comment float framed geometry here lastpage lipsum multirow ntheorem setspace siunitx textpos times titlesec txfonts
+tlmgr install booktabs caption comment dotseqn float framed geometry here lastpage lipsum mathrsfs multirow newtx ntheorem realscripts setspace siunitx subfigure textpos times titlesec txfonts type1cm xstring
+
+tlmgr info mathrsfs
+# Packages containing files matching `mathrsfs':
+# jknapltx:
+#         texmf-dist/doc/latex/jknapltx/mathrsfs.rme
+#         texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+tlmgr install jknapltx rsfs
+
+
 
 cd Templates/meltingrabbit.com/201708020
 lualatex source.tex
@@ -98,6 +107,9 @@ cd Templates/ipsj_v4/UTF
 # ptex2pdf -l jsample
 platex jsample
 dvipdfmx jsample
+
+cd Templates/latex-template-ja
+lualatex thesis.tex
 ```
 
 ---
@@ -118,11 +130,10 @@ dvipdfmx jsample
 
 - [LaTeXスタイルファイル、MS-Wordテンプレートファイル](https://www.ipsj.or.jp/journal/submit/style.html)
 
-- [Melting Rabbit's Blog ](https://meltingrabbit.com/)
-
-- [rkmathi/jornal.tex](https://gist.github.com/rkmathi/6941a5180b7554ab915d)
-
 - [(lt)jsarticleによる, 日本数学会・日本応用数理学会の学会アブストラクト](https://qiita.com/t_kemmochi/items/cad392a0a3e7bcf3018d)
+- [Melting Rabbit's Blog ](https://meltingrabbit.com/)
+- [rkmathi/jornal.tex](https://gist.github.com/rkmathi/6941a5180b7554ab915d)
+- [sKujirai/latex-template-ja](https://github.com/sKujirai/latex-template-ja)
 
 ## フォント
 

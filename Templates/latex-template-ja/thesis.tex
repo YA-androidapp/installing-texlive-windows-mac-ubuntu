@@ -1,0 +1,140 @@
+% LaTeX Template
+\RequirePackage{ifluatex}
+\ifluatex
+  \documentclass[a4j,10ptj,fleqn]{ltjsbook}  % LuaLaTeX
+\else
+  \documentclass[uplatex,a4j,twoside,fleqn]{jsbook}  % upLaTeX
+\fi
+
+\usepackage{ifthen}
+\newcommand{\thesistype}{doctor}  % 博士論文
+% \newcommand{\thesistype}{master}  % 修士論文
+% \newcommand{\thesistype}{bachelor}  % 卒業論文
+\ifluatex
+  \usepackage{graphicx, xcolor}
+  \usepackage{luatexja-otf}
+  \usepackage{luatexja-fontspec}
+  \usepackage[ms]{luatexja-preset}
+  \setmainfont[Ligatures=TeX]{Times New Roman}
+\else
+  \usepackage[dvipdfmx]{graphicx, xcolor}
+\fi
+\usepackage[intlimits]{amsmath}
+\usepackage{newtxtext, newtxmath}
+\usepackage{mathrsfs}  % \mathscr用
+\usepackage{booktabs}  % 綺麗な表組み
+\usepackage{multirow}  % 複数行や複数列の表組み
+\usepackage{type1cm}  % フォント拡大縮小
+\usepackage{scalefnt}  % フォント拡大縮小
+\usepackage{fancyhdr}  % ヘッダーに罫線を引く
+\usepackage{comment}  % 複数行のコメントアウト
+\usepackage{subfigure}  % 図を複数並べる
+% \usepackage[notref,notcite]{showkeys} % ラベル表示 (提出前にコメントアウト)
+
+\usepackage[nocolsep]{dotseqn}  % 数式を点線で結ぶ
+\makeatletter
+\renewcommand\EqnDots{\leaders\hbox{\kern1\p@ .\kern1\p@}\hfill}
+\makeatother
+\renewcommand{\textbf}[1]{{\bfseries\sffamily#1}}  %太字にする際ゴシック体とセリフ体とを区別なく太くする
+
+\usepackage{jsbook2thesisL}
+
+% citation
+\usepackage{overcite}
+\renewcommand\citeform[1]{(#1)}
+
+% 速度vに関するフォント定義(体積vと区別)
+% \newcommand{\sv}{\mbox{\usefont{T1}{cmr}{m}{it}{v}}}  % Scalar v
+% \newcommand{\vv}{\mbox{\usefont{T1}{cmr}{bx}{it}{v}}}  % Vector v
+
+% 明朝体での半角括弧(機械学会準拠)
+% \newcommand*{\parentheses}[1]{{\mc (}{#1}{\mc )}}
+
+% 栞
+\ifluatex
+\usepackage[unicode=true,bookmarks=true, %
+  colorlinks=true,linkcolor=black,citecolor=black, %
+  bookmarksnumbered=true]{hyperref}
+\else
+\usepackage[dvipdfm,bookmarks=true,colorlinks=true,%%
+    linkcolor=black,citecolor=black,
+    bookmarksnumbered=true,bookmarkstype=toc
+    ]%%
+    {hyperref}
+\usepackage{pxjahyper}
+\fi
+
+% 索引
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{lipsum}  % ダミーテキスト用
+
+% 文書
+\begin{document}
+% title
+\ifthenelse{\equal{\thesistype}{doctor}}{%
+  \include{chap/others/title_dr}
+}{}
+\ifthenelse{\equal{\thesistype}{master}}{%
+  \include{chap/others/title_master}
+}{}
+\ifthenelse{\equal{\thesistype}{bachelor}}{%
+  \include{chap/others/title_bachelor}
+}{}
+\mbox{} \thispagestyle{empty} \newpage  % 空白ページ挿入
+
+% abstract
+\ifthenelse{\equal{\thesistype}{master}}{%
+  \include{chap/others/abstract_ja}  % 要旨（和文）
+  \include{chap/others/abstract_en}  % 要旨（英文）
+  \newpage
+}{}
+
+% 目次
+%\pagenumbering{roman}
+\frontmatter
+\tableofcontents  % 目次出力
+\newpage
+
+% fancy設定
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\thepage}
+\fancyhead[LE]{\nouppercase{\rightmark}}
+\fancyhead[RO]{\nouppercase{\leftmark}}
+\fancyhead[LE,RO]{\thepage}	 % 偶数ページは左に，奇数ページは右にページ番号を出力
+\fancyhead[RE]{\nouppercase{\leftmark}}	 % 偶数ページに\markleftで定義した文字を出力
+\fancyhead[LO]{\nouppercase{\rightmark}}  % 奇数ページに\markrightで定義した文字を出力
+\fancypagestyle{plainfoot}{  %
+  \fancyhf{}  % remove everything
+  %\renewcommand{\chaptermark}[1]{\markboth{第\thechapter章 \, #1}{}}
+  %\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+}
+
+% 本文
+\mainmatter
+\include{./chap/preface}  % 緒言
+
+% 謝辞
+\include{./chap/others/acknowledgement}
+
+% 参考文献
+\bibliographystyle{./chap/sjunsrt_d.bst}
+\bibliography{./chap/reference.bib}
+
+% 業績リスト
+\ifthenelse{\equal{\thesistype}{doctor}}{%
+  \include{./chap/others/bibliography}
+}{%else
+  \include{./chap/others/bibliography_bm}
+}
+
+% 補足
+\appendix
+\include{./chap/appendix/app_preface}
+
+% 索引
+%\printindex
+
+\end{document}
