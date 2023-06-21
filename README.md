@@ -4,9 +4,9 @@
 
 # TEX Live
 
-# Mac
+## Mac
 
-## Homebrewを利用したインストール
+### Homebrewを利用したインストール
 
 ```zsh
 brew install --cask mactex
@@ -31,28 +31,31 @@ sudo tlmgr install collection-langjapanese latexmk utf8add
 sudo tlmgr paper a4
 ```
 
-## インストール済みパッケージの更新
+### インストール済みパッケージの更新
 
 ```zsh
 sudo tlmgr update --self --all
 ```
 
-# Ubuntu
+## Ubuntu
 
 ```bash
 sudo apt install texlive-full
 ```
 
-# Windows
+## Windows
 
 ```powershell
 # 管理者権限で実行
 choco install texlive
-tlmgr install a4 cite collection-langjapanese latexmk url utf8add
+
+tlmgr --repository http://www.texlive.info/tlgpg/ install tlgpg
+
+tlmgr install cite collection-langjapanese latexmk url utf8add
 tlmgr paper a4
 ```
 
-# Docker
+## Docker
 
 ```bash
 # pull
@@ -68,6 +71,19 @@ docker image tag ghcr.io/paperist/texlive-ja:latest paperist/texlive-ja:latest
 docker run --rm -it -v $PWD:/workdir paperist/texlive-ja:latest sh -c 'latexmk -C main.tex && latexmk main.tex && latexmk -c main.tex'
 ```
 
+## 動作確認
+
+```bash
+lualatex test.tex
+```
+
+```bash
+tlmgr install booktabs comment float here lastpage multirow setspace textpos times txfonts
+
+cd Templates/meltingrabbit.com/201708020
+lualatex source.tex
+```
+
 ---
 
 # 参考文献
@@ -79,6 +95,8 @@ docker run --rm -it -v $PWD:/workdir paperist/texlive-ja:latest sh -c 'latexmk -
     - [TeX Live ガイド](https://www.tug.org/texlive/doc/texlive-ja/texlive-ja.pdf)
 
 - [TeX Wiki](https://texwiki.texjp.org/)
+
+- [Melting Rabbit's Blog ](https://meltingrabbit.com/)
 
 ---
 
